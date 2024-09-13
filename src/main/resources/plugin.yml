@@ -1,0 +1,8 @@
+name: Mypro
+version: '${project.version}'
+main: mcm.mypro.Mypro
+api-version: 1.16
+load: STARTUP
+commands:
+  mcm:
+    description: bind qqid
