@@ -1,7 +1,6 @@
-package mcm.mypro.arrow.CustomArrowImpl;
+package mcm.mypro.arrow.customArrowImpl;
 
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 
@@ -16,8 +15,12 @@ public class TrackArrowLightning extends TrackArrow {
         if (super.handle()) {
             return true;
         }
-        if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % 3 != 0) {
+        if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % 4 != 1) {
             return false;
+        }
+        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
+            LightningArrow.rangeLightning(arrow);
+            return true;
         }
         Location location = arrow.getLocation();
         location.setY(arrow.getWorld().getHighestBlockYAt(location));

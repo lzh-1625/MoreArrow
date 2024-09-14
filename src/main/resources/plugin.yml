@@ -1,8 +1,8 @@
-name: Mypro
-version: '${project.version}'
-main: mcm.mypro.Mypro
+name: MoreBow
+version: '0.10'
+main: mcm.mypro.MoreBow
 api-version: 1.16
 load: STARTUP
 commands:
-  mcm:
+  morebow:
     description: bind qqid

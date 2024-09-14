@@ -1,4 +1,4 @@
-package mcm.mypro.arrow.CustomArrowImpl;
+package mcm.mypro.arrow.customArrowImpl;
 
 import mcm.mypro.arrow.CustomArrow;
 import org.bukkit.Location;
@@ -16,10 +16,15 @@ public class TrackArrow extends CustomArrowBase implements CustomArrow {
         this.arrow = arrow;
     }
 
+    public TrackArrow(Arrow arrow, Player targetPlayer, Player belongPlayer) {
+        this.targetPlayer = targetPlayer;
+        this.arrow = arrow;
+        this.belongPlayer = belongPlayer;
+    }
 
     @Override
     public Boolean handle() {
-        if (arrow.isDead() || !arrow.isValid() || arrow.isOnGround() || !targetPlayer.isOnline()) {
+        if (!targetPlayer.isOnline()) {
             return true;
         }
         if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % interval != 0) {
@@ -43,7 +48,7 @@ public class TrackArrow extends CustomArrowBase implements CustomArrow {
         Vector newVector = new Vector();
 
         double deltaX = targetLocation.getX() - startLocation.getX();
-        double deltaY = targetLocation.getY() - startLocation.getY() + 1;
+        double deltaY = targetLocation.getY() - startLocation.getY();
         double deltaZ = targetLocation.getZ() - startLocation.getZ();
 
         double sum = (deltaX > 0 ? deltaX : -deltaX) + (deltaY > 0 ? deltaY : -deltaY) + (deltaZ > 0 ? deltaZ : -deltaZ);

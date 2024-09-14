@@ -1,5 +1,6 @@
 package mcm.mypro;
 
+import mcm.mypro.cmd.BowCommand;
 import mcm.mypro.event.EventListener;
 import mcm.mypro.arrow.ArrowActionHandler;
 import org.bukkit.Bukkit;
@@ -7,8 +8,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
 
-public final class Mypro extends JavaPlugin implements Listener {
+
+public final class MoreBow extends JavaPlugin implements Listener {
 
 
     @Override
@@ -23,6 +26,7 @@ public final class Mypro extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+
     }
 
     public void eventRegister() {
@@ -31,11 +35,11 @@ public final class Mypro extends JavaPlugin implements Listener {
     }
 
     public void cmdRegister() {
-
+        Objects.requireNonNull(this.getCommand("morebow")).setExecutor(new BowCommand());
     }
 
     public static Plugin plugin() {
-        return Mypro.getPlugin(Mypro.class);
+        return MoreBow.getPlugin(MoreBow.class);
     }
 
 }
