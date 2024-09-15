@@ -11,7 +11,5 @@ public class ArrowActionHandler extends BukkitRunnable {
             return;
         }
         ArrowData.tagArrowList.removeIf(e -> e != null && e.handle());
-
     }
-
 }
