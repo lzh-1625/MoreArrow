@@ -7,6 +7,7 @@ public class Consts {
 
     public final static Integer LIGHTNING_RANGE = 3;
     public final static Integer FIRE_RANGE = 3;
+    public final static Integer ICE_RANGE = 5;
 
 
 }
