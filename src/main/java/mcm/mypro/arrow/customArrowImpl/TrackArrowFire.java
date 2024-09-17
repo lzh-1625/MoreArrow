@@ -25,9 +25,9 @@ public class TrackArrowFire extends TrackArrow {
             return false;
         }
         if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
-            double compensation = (int) (Consts.LIGHTNING_RANGE / 2);
-            for (int x = 0; x < Consts.LIGHTNING_RANGE; x++) {
-                for (int z = 0; z < Consts.LIGHTNING_RANGE; z++) {
+            double compensation = (int) (Consts.FIRE_RANGE / 2);
+            for (int x = 0; x < Consts.FIRE_RANGE; x++) {
+                for (int z = 0; z < Consts.FIRE_RANGE; z++) {
                     Location location = arrow.getLocation();
                     location.setX(location.getX() - compensation + x);
                     location.setZ(location.getZ() - compensation + z);
