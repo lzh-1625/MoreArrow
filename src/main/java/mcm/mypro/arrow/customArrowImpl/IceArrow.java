@@ -25,7 +25,7 @@ public class IceArrow extends CustomArrowBase implements CustomArrow {
     }
 
     public static void rangeIce(Arrow arrow) {
-        double compensation = (int) (Consts.LIGHTNING_RANGE / 2);
+        double compensation = (int) (Consts.ICE_RANGE / 2);
         for (int x = 0; x < Consts.ICE_RANGE; x++) {
             for (int y = 0; y < Consts.ICE_RANGE; y++) {
                 for (int z = 0; z < Consts.ICE_RANGE; z++) {
@@ -34,6 +34,7 @@ public class IceArrow extends CustomArrowBase implements CustomArrow {
                     location.setY(location.getY() - compensation + y);
                     location.setZ(location.getZ() - compensation + z);
                     Block block = arrow.getWorld().getBlockAt(location);
+                    System.out.println(block.getLocation());
                     if (block.isEmpty()) {
                         block.setType(Material.ICE);
                     }

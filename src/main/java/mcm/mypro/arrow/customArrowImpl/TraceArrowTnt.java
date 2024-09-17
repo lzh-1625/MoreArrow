@@ -17,9 +17,6 @@ public class TraceArrowTnt extends TrackArrow implements CustomArrow {
     @Override
     public Boolean handle() {
         if (super.handle()) {
-            return true;
-        }
-        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
             TntArrow.explosion(arrow, belongPlayer);
             return true;
         }

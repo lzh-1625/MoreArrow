@@ -27,6 +27,9 @@ public class TrackArrow extends CustomArrowBase implements CustomArrow {
         if (!targetPlayer.isOnline()) {
             return true;
         }
+        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
+            return true;
+        }
         if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % interval != 0) {
             return false;
         }

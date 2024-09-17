@@ -15,6 +15,7 @@ public class TrackArrowLightning extends TrackArrow {
         if (super.handle()) {
             return true;
         }
+
         if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % 4 != 1) {
             return false;
         }

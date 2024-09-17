@@ -19,14 +19,11 @@ public class TraceArrowIce extends TrackArrow {
     @Override
     public Boolean handle() {
         if (super.handle()) {
+            IceArrow.rangeIce(arrow);
             return true;
         }
         if (arrow.getTicksLived() < 5) {
             return false;
-        }
-        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
-            IceArrow.rangeIce(arrow);
-            return true;
         }
         Block block = arrow.getWorld().getHighestBlockAt(arrow.getLocation());
         if (block.getType().equals(Material.WATER)) {

@@ -19,12 +19,6 @@ public class TrackArrowFire extends TrackArrow {
     @Override
     public Boolean handle() {
         if (super.handle()) {
-            return true;
-        }
-        if (arrow.getTicksLived() < 5) {
-            return false;
-        }
-        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
             double compensation = (int) (Consts.FIRE_RANGE / 2);
             for (int x = 0; x < Consts.FIRE_RANGE; x++) {
                 for (int z = 0; z < Consts.FIRE_RANGE; z++) {
@@ -38,6 +32,9 @@ public class TrackArrowFire extends TrackArrow {
                 }
             }
             return true;
+        }
+        if (arrow.getTicksLived() < 5) {
+            return false;
         }
         Block block = arrow.getWorld().getHighestBlockAt(arrow.getLocation()).getRelative(0, 1, 0);
         if (block.isEmpty()) {
