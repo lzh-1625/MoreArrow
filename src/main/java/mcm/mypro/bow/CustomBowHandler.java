@@ -26,6 +26,10 @@ public class CustomBowHandler {
                     return new LightningBow();
                 case ENDER:
                     return new EnderBow();
+                case ICE:
+                    return new IceBow();
+                case TRACE_ICE:
+                    return new TraceIceBow();
             }
         } catch (Exception e) {
             return null;

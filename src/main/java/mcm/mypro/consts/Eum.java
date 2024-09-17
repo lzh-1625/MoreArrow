@@ -9,7 +9,11 @@ public class Eum {
         TRACE_TNT("TRACE_TNT"),
         TNT("TNT"),
         LIGHTNING("LIGHTNING"),
-        ENDER("ENDER");
+        ICE("ICE"),
+        TRACE_ICE("TRACE_ICE"),
+        ENDER("ENDER"),
+        ;
+
 
         public final String value;
 

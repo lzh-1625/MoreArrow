@@ -48,5 +48,6 @@ public class BowCommand implements CommandExecutor {
         dataContainer.set(NameSpace.customBow, PersistentDataType.STRING, bowType);
         specialBow.setItemMeta(meta);
         player.getInventory().addItem(specialBow);
+        player.sendMessage("已获得【" + customBow.getDisplayName() + "】");
     }
 }
