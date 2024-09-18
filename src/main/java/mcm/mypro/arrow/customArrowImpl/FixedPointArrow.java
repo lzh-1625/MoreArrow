@@ -6,8 +6,8 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.util.Vector;
 
 public class FixedPointArrow extends CustomArrowBase implements CustomArrow {
-    Integer x;
-    Integer z;
+    double x;
+    double z;
 
     boolean fixedPointOver;
 
@@ -19,11 +19,11 @@ public class FixedPointArrow extends CustomArrowBase implements CustomArrow {
 
     @Override
     public Boolean handle() {
-        if (super.handle()) {
+        if (super.handle() || fixedPointOver) {
             return true;
         }
-        if (fixedPointOver) {
-            return true;
+        if (arrow.getTicksLived() % interval != 0) {
+            return false;
         }
         if (arrow.getLocation().getX() - x < 0.5 && arrow.getLocation().getX() - x > -0.5 && arrow.getLocation().getZ() - z < 0.5 && arrow.getLocation().getZ() - z > -0.5) {
             arrow.setVelocity(new Vector(0, -1, 0));
@@ -33,7 +33,7 @@ public class FixedPointArrow extends CustomArrowBase implements CustomArrow {
         }
         Vector startVector = arrow.getVelocity();
 
-        Vector targetVector = TrackArrow.getVector(arrow, new Location(arrow.getWorld(), (double) x, arrow.getWorld().getHighestBlockAt(x, z).getY() + 30, (double) z));
+        Vector targetVector = TrackArrow.getVector(arrow, new Location(arrow.getWorld(), x, arrow.getWorld().getHighestBlockAt((int) x, (int) z).getY() + 30, z));
         Vector newVector = new Vector();
         newVector.setX((targetVector.getX() + startVector.getX()) / 2);
         newVector.setY((targetVector.getY() + startVector.getY()) / 2);

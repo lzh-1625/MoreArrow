@@ -55,7 +55,8 @@ public class FixedPointBow implements CustomBow {
             double x = radius * Math.cos(radians);
             double z = radius * Math.sin(radians);
             // 生成粒子
-            player.getWorld().spawnParticle(Particle.COMPOSTER, block.getLocation().add(x, 1.2, z), 1);
+            player.getWorld().spawnParticle(Particle.COMPOSTER, block.getLocation().add(x + 0.5, 1.2, z + 0.5), 1);
+            player.getWorld().spawnParticle(Particle.COMPOSTER, block.getLocation().add(x + 0.5, 0, z + 0.5), 1);
         }
         ItemStack mainHandItem = player.getInventory().getItemInMainHand();
         if (mainHandItem.hasItemMeta()) {
