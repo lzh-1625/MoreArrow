@@ -45,9 +45,26 @@ public class TrackArrow extends CustomArrowBase implements CustomArrow {
 
 
     @NotNull
-    private static Vector getVector(Arrow arrow, Player targetPlayer) {
+    public static Vector getVector(Arrow arrow, Player targetPlayer) {
         Location startLocation = arrow.getLocation();
         Location targetLocation = targetPlayer.getLocation();
+        Vector newVector = new Vector();
+
+        double deltaX = targetLocation.getX() - startLocation.getX();
+        double deltaY = targetLocation.getY() - startLocation.getY();
+        double deltaZ = targetLocation.getZ() - startLocation.getZ();
+
+        double sum = (deltaX > 0 ? deltaX : -deltaX) + (deltaY > 0 ? deltaY : -deltaY) + (deltaZ > 0 ? deltaZ : -deltaZ);
+
+        newVector.setX(deltaX / sum);
+        newVector.setY(deltaY / sum);
+        newVector.setZ(deltaZ / sum);
+        return newVector;
+    }
+
+    @NotNull
+    public static Vector getVector(Arrow arrow, Location targetLocation) {
+        Location startLocation = arrow.getLocation();
         Vector newVector = new Vector();
 
         double deltaX = targetLocation.getX() - startLocation.getX();

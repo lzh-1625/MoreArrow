@@ -12,6 +12,8 @@ public class Eum {
         ICE("ICE"),
         TRACE_ICE("TRACE_ICE"),
         ENDER("ENDER"),
+        FIXED_POINT("FIXED_POINT"),
+        FIXED_POINT_TNT("FIXED_POINT_TNT"),
         ;
 
 

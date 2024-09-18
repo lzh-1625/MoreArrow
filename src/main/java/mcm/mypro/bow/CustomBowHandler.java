@@ -4,6 +4,7 @@ import mcm.mypro.bow.CustomBow;
 import mcm.mypro.bow.customBowImpl.*;
 import mcm.mypro.consts.Eum;
 import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.RayTraceResult;
 
@@ -30,6 +31,10 @@ public class CustomBowHandler {
                     return new IceBow();
                 case TRACE_ICE:
                     return new TraceIceBow();
+                case FIXED_POINT:
+                    return new FixedPointBow();
+                case FIXED_POINT_TNT:
+                    return new FixedPointTntBow();
             }
         } catch (Exception e) {
             return null;
@@ -43,6 +48,15 @@ public class CustomBowHandler {
         RayTraceResult result = player.getWorld().rayTraceEntities(eyeLocation.add(eyeLocation.getDirection()), eyeLocation.getDirection(), 200);
         if (result != null && result.getHitEntity() != null && result.getHitEntity() instanceof Player) {
             return (Player) result.getHitEntity();
+        }
+        return null;
+    }
+
+    public static Block getRayTraceBlock(Player player) {
+        Location eyeLocation = player.getEyeLocation();
+        RayTraceResult result = player.getWorld().rayTraceBlocks(eyeLocation, eyeLocation.getDirection(), 200);
+        if (result != null && result.getHitBlock() != null) {
+            return result.getHitBlock();
         }
         return null;
     }
