@@ -22,6 +22,7 @@ public class FixedPointTntBow extends FixedPointBow {
             String coordinateStr = Objects.requireNonNull(Objects.requireNonNull(player.getPlayer()).getInventory().getItemInMainHand().getItemMeta()).getPersistentDataContainer().get(NameSpace.fixedPoint, PersistentDataType.STRING);
             assert coordinateStr != null;
             String[] coordinateList = coordinateStr.split("\\|");
+            arrow.setGravity(false);
             ArrowData.tagArrowList.add(new FixedPointArrowTnt(arrow, Integer.parseInt(coordinateList[0]), Integer.parseInt(coordinateList[1])));
         } catch (Exception ignored) {
 

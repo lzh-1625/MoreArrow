@@ -28,6 +28,7 @@ public class FixedPointArrow extends CustomArrowBase implements CustomArrow {
         if (arrow.getLocation().getX() - x < 0.5 && arrow.getLocation().getX() - x > -0.5 && arrow.getLocation().getZ() - z < 0.5 && arrow.getLocation().getZ() - z > -0.5) {
             arrow.setVelocity(new Vector(0, -1, 0));
             fixedPointOver = true;
+            arrow.setGravity(true);
             return true;
         }
         Vector startVector = arrow.getVelocity();
