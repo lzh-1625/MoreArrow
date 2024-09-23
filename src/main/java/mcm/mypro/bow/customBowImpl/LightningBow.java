@@ -20,7 +20,7 @@ public class LightningBow implements CustomBow {
 
     @Override
     public void shootArrow(Arrow arrow, Player player) {
-        ArrowData.tagArrowList.add(new LightningArrow(arrow));
+        ArrowData.customArrowList.add(new LightningArrow(arrow));
     }
 
     @Override

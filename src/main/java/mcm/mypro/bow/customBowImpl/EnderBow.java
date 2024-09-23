@@ -14,7 +14,7 @@ public class EnderBow implements CustomBow {
 
     @Override
     public void shootArrow(Arrow arrow, Player player) {
-        ArrowData.tagArrowList.add(new EnderArrow(arrow, player));
+        ArrowData.customArrowList.add(new EnderArrow(arrow, player));
     }
 
 

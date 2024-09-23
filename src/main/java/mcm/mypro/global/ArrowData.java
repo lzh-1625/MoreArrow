@@ -11,5 +11,5 @@ import java.util.List;
 import java.util.Map;
 
 public class ArrowData {
-    public static final List<CustomArrow> tagArrowList = new ArrayList<>();
+    public static final List<CustomArrow> customArrowList = new ArrayList<>();
 }

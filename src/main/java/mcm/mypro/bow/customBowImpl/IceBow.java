@@ -14,7 +14,7 @@ public class IceBow implements CustomBow {
 
     @Override
     public void shootArrow(Arrow arrow, Player player) {
-        ArrowData.tagArrowList.add(new IceArrow(arrow));
+        ArrowData.customArrowList.add(new IceArrow(arrow));
     }
 
     @Override

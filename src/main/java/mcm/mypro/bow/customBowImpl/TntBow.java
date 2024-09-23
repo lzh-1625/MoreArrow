@@ -14,7 +14,7 @@ public class TntBow implements CustomBow {
 
     @Override
     public void shootArrow(Arrow arrow, Player player) {
-        ArrowData.tagArrowList.add(new TntArrow(arrow, player));
+        ArrowData.customArrowList.add(new TntArrow(arrow, player));
     }
 
     @Override

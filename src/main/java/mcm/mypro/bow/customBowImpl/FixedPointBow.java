@@ -35,7 +35,7 @@ public class FixedPointBow implements CustomBow {
             assert coordinateStr != null;
             String[] coordinateList = coordinateStr.split("\\|");
             arrow.setGravity(false);
-            ArrowData.tagArrowList.add(new FixedPointArrow(arrow, Integer.parseInt(coordinateList[0]), Integer.parseInt(coordinateList[1])));
+            ArrowData.customArrowList.add(new FixedPointArrow(arrow, Integer.parseInt(coordinateList[0]), Integer.parseInt(coordinateList[1])));
         } catch (Exception ignored) {
 
         }

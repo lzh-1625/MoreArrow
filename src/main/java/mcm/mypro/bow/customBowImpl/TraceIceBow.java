@@ -29,6 +29,6 @@ public class TraceIceBow extends TraceBow implements CustomBow {
         } catch (NullPointerException e) {
             return;
         }
-        ArrowData.tagArrowList.add(new TraceArrowIce(arrow, Bukkit.getPlayer(targetName)));
+        ArrowData.customArrowList.add(new TraceArrowIce(arrow, Bukkit.getPlayer(targetName)));
     }
 }

@@ -32,7 +32,7 @@ public class TraceBow implements CustomBow {
         } catch (NullPointerException e) {
             return;
         }
-        ArrowData.tagArrowList.add(new TrackArrow(arrow, Bukkit.getPlayer(targetName)));
+        ArrowData.customArrowList.add(new TrackArrow(arrow, Bukkit.getPlayer(targetName)));
     }
 
 

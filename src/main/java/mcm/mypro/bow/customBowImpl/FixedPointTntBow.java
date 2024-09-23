@@ -23,7 +23,7 @@ public class FixedPointTntBow extends FixedPointBow {
             assert coordinateStr != null;
             String[] coordinateList = coordinateStr.split("\\|");
             arrow.setGravity(false);
-            ArrowData.tagArrowList.add(new FixedPointArrowTnt(arrow, Integer.parseInt(coordinateList[0]), Integer.parseInt(coordinateList[1])));
+            ArrowData.customArrowList.add(new FixedPointArrowTnt(arrow, Integer.parseInt(coordinateList[0]), Integer.parseInt(coordinateList[1])));
         } catch (Exception ignored) {
 
         }

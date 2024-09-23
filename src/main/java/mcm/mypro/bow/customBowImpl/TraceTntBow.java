@@ -34,7 +34,7 @@ public class TraceTntBow extends TraceBow implements CustomBow {
             return;
         }
         arrow.setGravity(false);
-        ArrowData.tagArrowList.add(new TraceArrowTnt(arrow, Bukkit.getPlayer(targetName)));
+        ArrowData.customArrowList.add(new TraceArrowTnt(arrow, Bukkit.getPlayer(targetName)));
     }
 
 
