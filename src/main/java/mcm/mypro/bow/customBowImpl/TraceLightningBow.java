@@ -32,6 +32,7 @@ public class TraceLightningBow extends TraceBow implements CustomBow {
         } catch (NullPointerException e) {
             return;
         }
+        arrow.setGravity(false);
         ArrowData.tagArrowList.add(new TrackArrowLightning(arrow, Bukkit.getPlayer(targetName)));
     }
 

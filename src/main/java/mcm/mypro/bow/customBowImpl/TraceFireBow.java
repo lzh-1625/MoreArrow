@@ -32,6 +32,7 @@ public class TraceFireBow extends TraceBow implements CustomBow {
         } catch (NullPointerException e) {
             return;
         }
+        arrow.setGravity(false);
         ArrowData.tagArrowList.add(new TrackArrowFire(arrow, Bukkit.getPlayer(targetName)));
     }
 

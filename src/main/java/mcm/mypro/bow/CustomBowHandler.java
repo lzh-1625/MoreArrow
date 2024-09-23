@@ -35,6 +35,8 @@ public class CustomBowHandler {
                     return new FixedPointBow();
                 case FIXED_POINT_TNT:
                     return new FixedPointTntBow();
+                case SMOKE:
+                    return new SmokeBow();
             }
         } catch (Exception e) {
             return null;
@@ -54,7 +56,7 @@ public class CustomBowHandler {
 
     public static Block getRayTraceBlock(Player player) {
         Location eyeLocation = player.getEyeLocation();
-        RayTraceResult result = player.getWorld().rayTraceBlocks(eyeLocation, eyeLocation.getDirection(), 200);
+        RayTraceResult result = player.getWorld().rayTraceBlocks(eyeLocation, eyeLocation.getDirection(), 2000);
         if (result != null && result.getHitBlock() != null) {
             return result.getHitBlock();
         }

@@ -24,10 +24,8 @@ public class TrackArrow extends CustomArrowBase implements CustomArrow {
 
     @Override
     public Boolean handle() {
-        if (!targetPlayer.isOnline()) {
-            return true;
-        }
-        if (arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
+        if (!targetPlayer.isOnline() || arrow.isDead() || arrow.isOnGround() || !arrow.isValid()) {
+            arrow.setGravity(true);
             return true;
         }
         if (arrow.getTicksLived() < 5 || arrow.getTicksLived() % interval != 0) {
